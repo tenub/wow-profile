@@ -1,0 +1,71 @@
+.character-profile {
+	--class-color-1: #c79c6e;
+	--class-color-2: #f58cba;
+	--class-color-3: #abd473;
+	--class-color-4: #fff569;
+	--class-color-5: #fff;
+	--class-color-6: #c41f3b;
+	--class-color-7: #0070de;
+	--class-color-8: #69ccf0;
+	--class-color-9: #9482c9;
+	--class-color-10: #00ff96;
+	--class-color-11: #ff7d0a;
+	--class-color-12: #a330c9;
+}
+
+.character-class-1 {
+	color: var(--class-color-1);
+}
+
+.character-class-2 {
+	color: var(--class-color-2);
+}
+
+.character-class-3 {
+	color: var(--class-color-3);
+}
+
+.character-class-4 {
+	color: var(--class-color-4);
+}
+
+.character-class-5 {
+	color: var(--class-color-5);
+}
+
+.character-class-6 {
+	color: var(--class-color-6);
+}
+
+.character-class-7 {
+	color: var(--class-color-7);
+}
+
+.character-class-8 {
+	color: var(--class-color-8);
+}
+
+.character-class-9 {
+	color: var(--class-color-9);
+}
+
+.character-class-10 {
+	color: var(--class-color-10);
+}
+
+.character-class-11 {
+	color: var(--class-color-11);
+}
+
+.character-class-12 {
+	color: var(--class-color-12);
+}
+
+/**
+ * Styles
+ */
+.character-thumbnail {
+	width: 84px;
+	height: 84px;
+	background-color: #222;
+}

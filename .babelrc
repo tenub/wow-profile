@@ -1,0 +1,24 @@
+{
+  "env": {
+    "server": {
+      "presets": [
+        "env"
+      ],
+      "plugins": [
+        "transform-export-extensions",
+        "transform-object-rest-spread"
+      ]
+    },
+    "browser": {
+      "presets": [
+        ["env", { "modules": false }],
+        "react"
+      ],
+      "plugins": [
+        "react-hot-loader/babel",
+        "transform-export-extensions",
+        "transform-object-rest-spread"
+      ]
+    }
+  }
+}

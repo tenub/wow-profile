@@ -1,0 +1,24 @@
+.error section,
+.idle section,
+.loading section {
+	display: none;
+}
+
+.error::before {
+	content: 'Error';
+}
+
+.loading::before {
+	content: 'Loading';
+}
+
+.character {
+	display: flex;
+	justify-content: center;
+}
+
+.character section {
+	margin: .5em;
+	padding: .75em 1em;
+	text-transform: uppercase;
+}
