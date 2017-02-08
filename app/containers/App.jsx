@@ -14,6 +14,8 @@ class App extends Component {
 		try {
 			cachedState = JSON.parse(localStorage.getItem('wowProfile'));
 
+			console.log(cachedState);
+
 			if (cachedState) {
 				this.state = cachedState;
 			}
@@ -119,6 +121,7 @@ class App extends Component {
 					!res.ok ? Promise.reject(new Error('Response not ok')) : res.json()
 				))
 				.then((character) => {
+					console.info(character);
 					this.setState({ character: Object.assign({}, character, { status: 'loaded' }) });
 				})
 				.catch(() => {
@@ -155,7 +158,7 @@ class App extends Component {
 						</select>
 						<input className="user-input-name" type="text" value={this.state.input.name} placeholder="Name" onChange={this.handleChangeName} disabled={!this.state.input.realm.length}/>
 					</form>
-					<Character {...this.state.character} />
+					<Character {...this.state.input} {...this.state.character} />
 				</main>
 				<footer></footer>
 			</div>

@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 
 import {
 	CharacterProfile,
+	CharacterStats,
+	CharacterProfessions,
 	CharacterKeystone
 } from './';
+
 import './Character.css';
 
 class Character extends Component {
@@ -21,6 +24,8 @@ class Character extends Component {
 		return (
 			<div className={`character ${this.props.status}`}>
 				<CharacterProfile
+					region={this.props.region}
+
 					lastModified={this.props.lastModified}
 					charName={this.props.name}
 					realm={this.props.realm}
@@ -34,6 +39,10 @@ class Character extends Component {
 					calcClass={this.props.calcClass}
 					faction={this.props.faction}
 					totalHonorableKills={this.props.totalHonorableKills} />
+				<CharacterStats
+					stats={this.props.stats} />
+				<CharacterProfessions
+					{...this.props.professions} />
 				<CharacterKeystone
 					charCriteriaQuantity={this.charCriteriaQuantity} />
 			</div>

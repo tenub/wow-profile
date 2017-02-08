@@ -64,8 +64,23 @@
 /**
  * Styles
  */
+.character-profile {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.character-profile h1 {
+	flex-basis: 100%;
+}
+
+.character-info {
+	margin-left: 1em;
+}
+
 .character-thumbnail {
 	width: 84px;
 	height: 84px;
 	background-color: #222;
+	border-radius: 3px;
+	box-shadow: .05em .1em rgba(0, 0, 0, 0.3);
 }

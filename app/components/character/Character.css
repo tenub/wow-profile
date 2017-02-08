@@ -14,6 +14,7 @@
 
 .character {
 	display: flex;
+	align-items: flex-start;
 	justify-content: center;
 }
 
@@ -21,4 +22,8 @@
 	margin: .5em;
 	padding: .75em 1em;
 	text-transform: uppercase;
+}
+
+.character-label {
+	color: #808080;
 }

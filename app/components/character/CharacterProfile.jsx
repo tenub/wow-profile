@@ -1,8 +1,15 @@
 import React from 'react';
 
+import lpad from '../../../lib/lpad';
+
 import './CharacterProfile.css';
 
-export default ({ lastModified, charName, realm, battlegroup, charClass, charRace, charGender, charLevel, achievementPoints, thumbnail, calcClass, faction, totalHonorableKills }) => {
+function friendlyDate(date) {
+	return `${date.getFullYear()}-${lpad(date.getMonth() + 1)}-${lpad(date.getDate())} ${lpad(date.getHours())}:${lpad(date.getMinutes())}`;
+}
+
+export default ({ region, lastModified, charName, realm, battlegroup, charClass, charRace, charGender, charLevel, achievementPoints, thumbnail, calcClass, faction, totalHonorableKills }) => {
+	const lastModifiedText = friendlyDate(new Date(lastModified));
 	const charGenderName = charGender > 0 ? 'female' : 'male';
 	const charFactionName = faction > 0 ? 'horde' : 'alliance';
 	const charRaceName = (() => {
@@ -72,29 +79,32 @@ export default ({ lastModified, charName, realm, battlegroup, charClass, charRac
 
 	return (
 		<section className="character-profile">
-			<h1>Profile</h1>
-			<div className="character-date">
-				{new Date(lastModified).toLocaleString()}
+			<h1>
+				Profile
+			</h1>
+			<a href={`http://${region}.battle.net/wow/character/${realm}/${charName}/`}>
+				<img className="character-thumbnail" src={thumbnail ? `http://render-api-us.worldofwarcraft.com/static-render/us/${thumbnail}` : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='} alt={charName} />
+			</a>
+			<div className="character-info">
+				<div className="character-desc">
+					{charLevel} {charGenderName} {charRaceName} <span className={`character-class-${charClass}`}>{charClassName}</span>
+				</div>
+				<div className="character-date">
+					<span className="character-label">Updated:</span> {lastModifiedText}
+				</div>
+				<div className="character-battlegroup">
+					<span className="character-label">Battlegroup:</span> {battlegroup}
+				</div>
+				<div className="character-realm">
+					<span className="character-label">Realm:</span> {realm}
+				</div>
+				<div className="character-points">
+					<span className="character-label">Achievement Points:</span> {achievementPoints}
+				</div>
+				<div className="character-kills">
+					<span className="character-label">Honorable Kills:</span> {totalHonorableKills}
+				</div>
 			</div>
-			<div className="character-name">
-				{charName}
-			</div>
-			<div className="character-realm">
-				{realm}
-			</div>
-			<div className="character-battlegroup">
-				{battlegroup}
-			</div>
-			<div className="character-extra">
-				{charLevel} {charRaceName} <span className={`character-class-${charClass}`}>{charClassName}</span>
-			</div>
-			<div className="character-points">
-				{achievementPoints}
-			</div>
-			<div className="character-kills">
-				{totalHonorableKills}
-			</div>
-			<img className="character-thumbnail" src={thumbnail ? `http://render-api-us.worldofwarcraft.com/static-render/us/${thumbnail}a` : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='} alt={charName} />
 		</section>
 	);
 };
