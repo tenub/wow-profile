@@ -1,6 +1,6 @@
 import React from 'react';
 
-import lpad from '../../../lib/lpad';
+import { lpad } from '../../../lib/util';
 
 import './CharacterProfile.css';
 
@@ -90,19 +90,19 @@ export default ({ region, lastModified, charName, realm, battlegroup, charClass,
 					{charLevel} {charGenderName} {charRaceName} <span className={`character-class-${charClass}`}>{charClassName}</span>
 				</div>
 				<div className="character-date">
-					<span className="character-label">Updated:</span> {lastModifiedText}
+					<span className="character-field-key">Updated:</span> {lastModifiedText}
 				</div>
 				<div className="character-battlegroup">
-					<span className="character-label">Battlegroup:</span> {battlegroup}
+					<span className="character-field-key">Battlegroup:</span> {battlegroup}
 				</div>
 				<div className="character-realm">
-					<span className="character-label">Realm:</span> {realm}
+					<span className="character-field-key">Realm:</span> {realm}
 				</div>
 				<div className="character-points">
-					<span className="character-label">Achievement Points:</span> {achievementPoints}
+					<span className="character-field-key">Achievement Points:</span> {achievementPoints}
 				</div>
 				<div className="character-kills">
-					<span className="character-label">Honorable Kills:</span> {totalHonorableKills}
+					<span className="character-field-key">Honorable Kills:</span> {totalHonorableKills}
 				</div>
 			</div>
 		</section>

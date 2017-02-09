@@ -1,6 +1,7 @@
 import express from 'express';
-import api from './lib/api';
+import { apiSim, apiWow } from './lib/api';
 
 express()
-	.use('/api', api)
+	.use('/api/wow', apiWow)
+	.use('/api/sim', apiSim)
 	.listen(process.env.API_PORT);

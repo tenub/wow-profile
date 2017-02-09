@@ -1,16 +1,84 @@
 import React from 'react';
 
-import decamel from '../../../lib/decamel';
-
 import './CharacterStats.css';
 
-export default ({ stats }) => (
+export default ({ str, agi, int, sta }) => (
 	<section className="character-stats">
 		<h1>Stats</h1>
-		{Object.entries(stats).map(([key, value], i) => (
-			<div key={i} className={`character-stats-${key}`}>
-				<span className="character-label">{decamel(key)}:</span> {value}
+		<div className="character-stats-attributes">
+			<h2>Attributes</h2>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Strength:</span> {str}
 			</div>
-		))}
+			<div className="character-stats-stat">
+				<span className="character-field-key">Agility:</span> {agi}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Intellect:</span> {int}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Stamina:</span> {sta}
+			</div>
+		</div>
+		{/*<div className="character-stats-attributes">
+			<h2>Attack</h2>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Strength:</span> {str}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Agility:</span> {agi}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Intellect:</span> {int}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Stamina:</span> {sta}
+			</div>
+		</div>
+		<div className="character-stats-attributes">
+			<h2>Spell</h2>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Strength:</span> {str}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Agility:</span> {agi}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Intellect:</span> {int}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Stamina:</span> {sta}
+			</div>
+		</div>
+		<div className="character-stats-attributes">
+			<h2>Defense</h2>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Strength:</span> {str}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Agility:</span> {agi}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Intellect:</span> {int}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Stamina:</span> {sta}
+			</div>
+		</div>
+		<div className="character-stats-attributes">
+			<h2>Enhancements</h2>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Strength:</span> {str}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Agility:</span> {agi}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Intellect:</span> {int}
+			</div>
+			<div className="character-stats-stat">
+				<span className="character-field-key">Stamina:</span> {sta}
+			</div>
+		</div>*/}
 	</section>
 );

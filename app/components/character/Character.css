@@ -1,29 +1,29 @@
-.error section,
-.idle section,
-.loading section {
+.character-error section,
+.character-idle section,
+.character-loading section {
 	display: none;
 }
 
-.error::before {
+.character-error::before {
 	content: 'Error';
 }
 
-.loading::before {
+.character-loading::before {
 	content: 'Loading';
 }
 
-.character {
+.character-loaded {
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
 }
 
-.character section {
+.character-loaded section {
 	margin: .5em;
 	padding: .75em 1em;
 	text-transform: uppercase;
 }
 
-.character-label {
+.character-field-key {
 	color: #808080;
 }
